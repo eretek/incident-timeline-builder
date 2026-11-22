@@ -1,0 +1,42 @@
+{
+ "tests": [
+  {
+   "in": {
+    "csv": "time,source,host,user,event,phase\n2026-11-20 02:14,EDR,WS-114,ayse.k,Suspicious PowerShell executed,initial\n2026-11-20 02:16,Firewall,WS-114,,Outbound connection to known C2 address,\n2026-11-20 03:40,SIEM,DC01,ayse.k,4 failed logons followed by a successful logon,\n2026-11-20 07:05,SOC,WS-114,,Alert confirmed by analyst,detect\n2026-11-20 07:32,SOC,WS-114,,Device isolated from network,contain\n2026-11-20 09:10,IT,DC01,ayse.k,Password reset and sessions revoked,\n2026-11-20 14:30,IT,WS-114,,Device reimaged and returned,recover",
+    "tz": "+03:00",
+    "gap": 60
+   },
+   "v": {
+    "count": 7,
+    "ttdMin": 291,
+    "ttcMin": 27,
+    "first": "2026-11-19T23:14:00.000Z"
+   }
+  },
+  {
+   "in": {
+    "csv": "time;source;event\n2026-11-21T10:00:00Z;M365;Impossible travel alert for user\n21.11.2026 13:05;Firewall;VPN login from new country\n2026-11-21T12:30:00+02:00;EDR;Malware blocked on laptop",
+    "tz": "+03:00"
+   },
+   "v": {
+    "count": 3,
+    "first": "2026-11-21T10:00:00.000Z",
+    "last": "2026-11-21T10:30:00.000Z"
+   }
+  },
+  {
+   "in": {
+    "csv": "time,event\n2026-11-20 02:14,x",
+    "tz": "3"
+   },
+   "err": "tz"
+  },
+  {
+   "in": {
+    "csv": "time,event\ndün gece,x",
+    "tz": "+03:00"
+   },
+   "err": "csv"
+  }
+ ]
+}
